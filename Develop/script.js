@@ -6,13 +6,13 @@ var confirmUppercase;
 var confirmLowercase;
 var choices;
 
-var number = "0123456789";
+var number = ["0","1","2","3","4,","5","6","7","8","9"];
 
-var character = "!@#$%^&*()_+=-/~`<>?.;:";
+var character = ["!","@","#","$","%","^","&","*","(",")","_","+","=","-","/","~","`","<",">","?",".",";",":"];
 
-var alpha = "abcdefghijklmnopqrstuvwxyz";
+var alpha = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"];
 
-var alpha2 = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+var alpha2 = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z"];
 
 
 
@@ -94,6 +94,7 @@ function generatePassword() {
   for (var i = 0; i < enter; i++){
     var pickChoices = choices[Math.floor(Math.random()* choices.length)];
     password.push(pickChoices);
+    console.log(pickChoices)
     
   }
 
@@ -110,7 +111,8 @@ function writePassword() {
   var password = generatePassword();
   var passwordText = document.querySelector("#password");
 
-  passwordText.value = password;
+  passwordText.value = (password.join(''));
+  console.log(password);
   
 
 }
